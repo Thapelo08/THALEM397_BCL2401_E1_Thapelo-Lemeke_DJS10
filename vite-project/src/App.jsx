@@ -4,6 +4,18 @@ function BlogPosts() {
   const [posts, sdtPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchBlogPosts() {
+      try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+        if (!response.ok) {
+          throw new Error('Failed to fetch blog posts');
+        }
+        
+      }
+    }
+  })
 }
 
-export default App
+export default BlogPosts;
