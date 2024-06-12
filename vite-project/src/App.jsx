@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 function BlogPosts() {
-  const [posts, sdtPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -12,7 +12,12 @@ function BlogPosts() {
         if (!response.ok) {
           throw new Error('Failed to fetch blog posts');
         }
-        
+        const fetchedPosts = await response.json();
+        setPosts(fetchedPosts);
+        setLoading(false);
+      } catch (error) {
+        setError('Failed to fetch blog posts');
+        setLoading(false);
       }
     }
   })
