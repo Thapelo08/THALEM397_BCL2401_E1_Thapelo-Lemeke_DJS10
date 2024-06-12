@@ -20,7 +20,9 @@ function BlogPosts() {
         setLoading(false);
       }
     }
-  })
+
+    fetchBlogPosts();
+  }, []); 
 }
 
 export default BlogPosts;
