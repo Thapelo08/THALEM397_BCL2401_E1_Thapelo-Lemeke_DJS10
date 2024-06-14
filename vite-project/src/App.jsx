@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 function BlogPosts() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
 
 useEffect(()  => {
@@ -16,9 +17,9 @@ useEffect(()  => {
       const fetchedPosts = await response.json();
       setPosts(fetchedPosts);
       setLoading(false);
-
-
-    }
+      } catch (error) {
+        setError('Failed to fecth blog posts');
+      }
   }
 })
 
