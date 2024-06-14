@@ -29,7 +29,13 @@ if (loading) {
   return <div>Loading...</div>;
 }
 
-
+if (error) {
+  return <div className="error-message">Error: {error}</div>;
+}
+ 
+return (
+  <
+)
 }
 
 
