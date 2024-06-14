@@ -25,6 +25,11 @@ useEffect(()  => {
   fetchBlogPosts();
 },[])
 
+if (loading) {
+  return <div>Loading...</div>;
+}
+
+
 }
 
 
