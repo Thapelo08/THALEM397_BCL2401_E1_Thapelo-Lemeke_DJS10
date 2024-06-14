@@ -22,7 +22,8 @@ useEffect(()  => {
         setLoading(false);
       }
   }
-})
+  fetchBlogPosts();
+},[])
 
 }
 
