@@ -18,7 +18,7 @@ useEffect(()  => {
       setPosts(fetchedPosts);
       setLoading(false);
       } catch (error) {
-        setError('Failed to fecth blog posts');
+        setError('Data fetching failed');
         setLoading(false);
       }
   }
