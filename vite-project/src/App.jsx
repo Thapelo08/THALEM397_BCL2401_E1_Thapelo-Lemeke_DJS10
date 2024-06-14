@@ -19,6 +19,7 @@ useEffect(()  => {
       setLoading(false);
       } catch (error) {
         setError('Failed to fecth blog posts');
+        setLoading(false);
       }
   }
 })
