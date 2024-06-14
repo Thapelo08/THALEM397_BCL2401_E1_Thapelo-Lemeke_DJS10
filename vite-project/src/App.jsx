@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 function BlogPosts() {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
 
 useEffect(()  => {
@@ -14,7 +15,8 @@ useEffect(()  => {
 
       const fetchedPosts = await response.json();
       setPosts(fetchedPosts);
-      
+      setLoading(false);
+
 
     }
   }
